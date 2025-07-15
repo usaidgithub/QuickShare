@@ -96,7 +96,7 @@ export default function RoomPage() {
         formData.append("sender", name);
 
         try {
-            const res = await fetch("http://localhost:5000/upload", {
+            const res = await fetch(" https://quickshare-backend-n6qt.onrender.com/upload", {
                 method: "POST",
                 body: formData,
             });
