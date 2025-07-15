@@ -64,7 +64,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
     // Delete the original temp file (without extension)
     await fs.promises.unlink(file.path);
 
-    const fileUrl = `http://localhost:5000/tmp/${finalName}`;
+    const fileUrl = `https://quickshare-backend-n6qt.onrender.com/tmp/${finalName}`;
     console.log(`📁 File uploaded by ${sender}: ${file.originalname}`);
 
     // Emit file message to all users in room
