@@ -51,7 +51,7 @@ npm install
 node index.js
 
 3. Start the Frontend App
-cd temp-chat-frontend
+cd ..
 npm install
 npm run dev
 
