@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 QuickShare - Real-Time File and Chat Sharing App
 
-## Getting Started
+QuickShare is a minimal, real-time file and chat sharing platform built using **Next.js** (React), **Node.js**, **Express**, and **Socket.io**. It allows users to join temporary chat rooms, send text messages, and share files securely — all with auto-deletion after a few minutes.
 
-First, run the development server:
+## ✨ Features
+
+- 🔒 No login required — just enter your name to join any room
+- 💬 Real-time chat via Socket.io
+- 📎 Share images, videos, PDFs, and documents
+- 🕒 Auto-deletes shared files after 3 minutes
+- 📱 Responsive design for mobile and desktop
+- 📤 File previews (image, video, PDF) and download option
+- 💡 Lightweight and fast — no database or permanent storage
+
+## ⚙️ Tech Stack
+
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Backend:** Node.js, Express, Socket.io
+- **File Uploads:** Multer
+- **Notifications:** React Toastify
+
+---
+
+## 📁 Folder Structure
+temp-chat-frontend/ → Next.js frontend
+temp-chat-backend/ → Node.js backend server with Socket.io
+└── tmp/ → Temporarily stores uploaded files
+
+---
+
+## 🧑‍💻 How to Run Locally
+
+### 🔧 Prerequisites
+
+- Node.js & npm installed
+- Git installed
+
+---
+
+### 🚀 Step-by-Step Setup
+
+#### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/usaidgithub/QuickShare
+cd temp-chat-frontend
+
+2.Start the backend server
+cd temp-chat-backend
+npm install
+node index.js
+
+3. Start the Frontend App
+cd temp-chat-frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧪 Testing the App
+1.Open http://localhost:3000/room/your-room-id in two tabs or different devices.
+2.Enter a name to join.
+3.Start sending messages and uploading files!
+4.Uploaded files will auto-delete after 3 minutes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
