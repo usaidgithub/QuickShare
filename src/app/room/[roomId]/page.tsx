@@ -158,7 +158,7 @@ export default function RoomPage() {
 
     return (
 
-        <div className="flex h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 font-sans antialiased overflow-hidden">
+        <div className="flex min-h-[100dvh] bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 font-sans antialiased overflow-hidden">
             {/* Sidebar for users - visible on large screens, collapsible on small */}
             <aside
                 className={`fixed inset-y-0 left-0 w-64 bg-gray-800 p-6 border-r border-gray-700 flex flex-col z-20 transition-transform duration-300 ease-in-out
@@ -211,7 +211,7 @@ export default function RoomPage() {
             </aside>
 
             {/* Main chat content area */}
-            <div className="flex-1 flex flex-col h-full lg:ml-64">
+            <div className="flex-1 flex flex-col min-h-0 lg:ml-64">
                 {/* Chat Header - sticky */}
                 <header className="bg-gray-800 p-4 border-b border-gray-700 flex items-center justify-between sticky top-0 z-10 shadow-lg shrink-0">
                     <div className="flex items-center">
@@ -343,7 +343,7 @@ export default function RoomPage() {
                 </div>
 
                 {/* Message Input and Send Area - sticky bottom */}
-                <div className="bg-gray-800 p-3 sm:p-4 border-t border-gray-700 flex items-center shadow-lg z-30 sticky bottom-0 shrink-0">
+                <div className="bg-gray-800 p-3 sm:p-4 border-t border-gray-700 flex items-center shadow-lg z-30 sticky bottom-0 shrink-0 pb-[env(safe-area-inset-bottom)]">
                     <input
                         className="flex-grow bg-gray-700 text-white placeholder-gray-400 px-4 py-2 sm:px-5 sm:py-3 rounded-xl border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-base sm:text-lg mr-2 sm:mr-3"
                         value={messageInput}
@@ -447,9 +447,10 @@ export default function RoomPage() {
 
         /* Essential for preventing unwanted scroll when keyboard pops up on mobile */
         html, body, #__next {
-          height: 100%;
-          overflow: hidden; /* Prevent body scroll, let app manage it */
-        }
+    height: 100%;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
       `}</style>
         </div>
     );
