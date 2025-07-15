@@ -38,7 +38,11 @@ const upload = multer({
   dest: "tmp/", // Save in /tmp folder
   limits: { fileSize: 30 * 1024 * 1024 }, // 30MB max
 });
-
+// Ping route to keep server awake and log requests
+app.get("/ping", (req, res) => {
+  console.log(`🔁 Ping received at ${new Date().toISOString()}`);
+  res.status(200).send("pong");
+});
 // Basic health check
 app.get("/", (req, res) => {
   res.send("Server is running 🚀");
